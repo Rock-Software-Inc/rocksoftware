@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
+::selection {
+    background: var(--bg-red-translucid);
+    color: var(--ft-white);
+}
+
+caret-color {
+    color: var(--ft-white);
+    background: red;
+}
+
+:root {
+    /* backgrounds */
+    --bg-red: #e16350;
+    --bg-red-translucid: rgb(225, 99, 80, .25);
+    --bg-black: #13141f;
+    --bg-white: #f5f5f5;
+    --bg-grey: #606594;
+    --bg-lightblue: #019cde;
+    /* fonts */
+    --ft-black: #13141f;
+    --ft-red: #e16350;
+    --ft-white: #f5f5f5;
+    --ft-grey: #b1b7ff;
+    --ft-lightblue: #019cde;
+}
+
+body, html {
+    background: var(--bg-black);
+    color: var(--ft-white);
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+}
+
+/* Login */
+section#logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('../img/rocksoftware.svg');
+    margin-top: 2rem;
+    height: 40px;
+    -webkit-user-drag: none;
+    user-select: none;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+section#login-background {
+    display: flex;
+    flex-grow: 10;
+    background: url('../img/login-background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+section#login-info {
+    display: flex;
+    margin: 1rem;
+    width: 100%;
+    justify-content: space-around;
+    font-size: .75rem;
+    font-weight: bold;
+}
+
+aside#login-form,aside#login-form form {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    height: 100%;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    padding: 0 2rem;
+}
+
+.input-group {
+    width: 100%;
+    padding: 1rem 0;
+    position: relative;
+    transition: ''
+}
+
+.input-group input {
+    appearance: none;
+    height: 48px;
+    width: 100%;
+    border-radius: .25rem;
+    border: 2px solid var(--bg-grey);
+    background: none;
+    color: var(--ft-white);
+    outline: none;
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+
+label:has( ~ input:focus) {
+    color: var(--ft-white);
+}
+
+.input-group input:focus {
+    border: 2px solid var(--bg-white);
+}
+
+.input-group input[type=password]::after {
+    content: 'teste';
+    width: 25px;
+    height: 25px;
+    border: 2px solid red;
+    background-color: red;
+    position: absolute;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    transition: background-color 5000s ease-in-out 0s, color 5000s ease-in-out 0s;
+    color: var(--bg-white) !important;
+}
+
+.input-group label.active {
+    color: var(--bg-lightblue);
+}
+
+.input-group label {
+    position: absolute;
+    font-size: .75rem;
+    user-select: none;
+    transform: translateY(-.425rem);
+    margin-left: 1rem;
+    color: var(--ft-grey);
+    font-weight: bold;
+    background:  var(--bg-black);
+    padding: 0 .5rem;
+}
+
+.input-group > input:focus ~ label {
+    color: red;
+}
+
+button[type=button] {
+    height: 42px;
+    width: 100%;
+    border: none;
+    border-radius: .25rem;
+    background: var(--bg-red);
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    color: var(--ft-white);
+}
+
+button[type=button]:focus {
+    outline: 2px solid var(--ft-white);
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .25rem;
+    flex-direction: column;
+    height: 5rem;
+}
+
+a, a:visited {
+    color: var(--ft-white);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--ft-lightblue);
+}
+
+/* feedbacks */
+.input-group[feedback=invalid] > input {
+    border: 2px solid var(--bg-red);
+}
+
+.input-group[feedback=invalid] > label {
+    color: var(--bg-red);
+}
+
+.newPassword {
+    display: none;
+}
+
+#recovery-code-sent {
+    text-align: center;
+    letter-spacing: 1.25rem;
+}
+
+/* Media Queries P/ mobile */
+@media (max-width: 767px) {
+    section#login-background {
+        display: none;
+    }
+}
