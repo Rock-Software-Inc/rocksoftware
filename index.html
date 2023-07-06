@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="shortcut icon" href="./assets/img/rock.svg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3.10.0/notyf.min.css">
     <title>Login</title>
 </head>
 
@@ -12,29 +14,30 @@
     <main>
         <section id="login-background"></section>
         <aside id="login-form">
-            <form autocomplete="off">
-                <div class="login-container">
-                    <h1>login</h1>
-                    <div class="input-group">
-                        <input type="text" name="" id="username">
-                    </div>
-                    <div class="input-group">
-                        <input type="password" name="" id="password">
-                    </div>
-                    <button type="button">login</button>
-                    <section id="login-info">
-                        <a href="/recoverypassword.html">esqueceu sua senha?</a>
-                        <a href="/signup.html">não tem uma conta?</a>
-                    </section>
+            <section id="logo"></section>
+            <form class="login-container" autocomplete="off">
+                <h1>login</h1>
+                <div class="input-group">
+                    <label for="">usuário ou e-mail</label>
+                    <input type="text" name="" id="user-login" autocomplete="off">
                 </div>
+                <div class="input-group">
+                    <label for="">senha</label>
+                    <input type="password" name="" maxlength="60" id="user-password">
+                </div>
+                <button type="button" ref="login">login</button>
+                <section id="login-info">
+                    <a href="./signup.html">não tem uma conta?</a>
+                    <a href="./recoverypassword.html">esqueceu a senha?</a>
+                </section>
             </form>
             <footer>
-                <small>
-                    Copyright©2018-2023, Rock Software LTDA. Todos os direitos reservados.
-                </small>
+                <small>copyright © 2023, rock software inc</small>
+                <small>todos os direitos reservados</small>
             </footer>
         </aside>
     </main>
+    <script src="./pages/js/login.js" type="module"></script>
 </body>
 
 </html>
